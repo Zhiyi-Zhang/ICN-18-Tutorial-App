@@ -8,11 +8,11 @@ namespace examples {
 class Consumer : noncopyable
 {
 public:
-  Consumer()
+  Consumer(const std::string& fileName = "rules.conf")
     : m_face()
     , validator(m_face)
   {
-    validator.load("rules.conf");
+    validator.load(fileName);
   }
 
   void
@@ -66,7 +66,12 @@ private:
 int
 main(int argc, char** argv)
 {
-  ndn::examples::Consumer consumer;
+  std::string configFile = "rules.conf";
+  if (argc == 2) {
+    configFile = argv[1];
+  }
+
+  ndn::examples::Consumer consumer(configFile);
   try {
     consumer.run();
   }
