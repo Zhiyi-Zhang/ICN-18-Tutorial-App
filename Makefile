@@ -10,9 +10,6 @@ all: $(PROGRAMS)
 %: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $< $(LIBS)
 
-tap-tunnel: tap-tunnel*.cpp tap-tunnel*.hpp
-	$(CXX) $(CXXFLAGS) -o $@ tap-tunnel*.cpp $(LIBS)
-
 clean:
 	rm -f $(PROGRAMS) tap-tunnel
 

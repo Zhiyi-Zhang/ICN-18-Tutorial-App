@@ -20,6 +20,7 @@ public:
   {
     Interest interest(Name("/home/LivingRoom/Camera-01"));
     interest.setInterestLifetime(2_s); // 2 seconds
+    interest.setCanBePrefix(true);
     interest.setMustBeFresh(true);
 
     m_face.expressInterest(interest,
