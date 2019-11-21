@@ -19,15 +19,22 @@ make
 ndnsec-import camera.prv.key
 ```
 
+Also, generate a new identity in your NDN keychain by:
+```
+ndnsec-key-gen /ndn/edu/ucla/alice
+```
+
 ### 3. Run applications
 
 ```
 ./producer
 ```
+The producer will reply Data packets signed by the key imported from `camera.prv.key` and packets signed by the self-generated key `/ndn/edu/ucla/alice` in turn.
 
 ```
 ./consumer
 ```
+The consumer is able to validate the Data packets signed by the key imported from `camera.prv.key` but cannot validate packets signed by `/ndn/edu/ucla/alice`.
 
 ### 4. Remove the example identity and corresponding key pairs from your local NDN key chain
 
