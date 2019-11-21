@@ -40,5 +40,6 @@ The consumer is able to validate the Data packets signed by the key imported fro
 
 ```
 ndnsec-delete /home/LivingRoom/Camera-01
+ndnsec-delete /ndn/edu/ucla/alice
 ```
 
